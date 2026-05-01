@@ -6,7 +6,7 @@ USE sample_sales;
 
 SELECT * FROM management WHERE SalesManager = 'Jeff "Howdy" Richards';
 -- ========================================================
--- Query(Q)
+-- Question(Q)
 -- Q1. What is total revenue overall for sales in the assigned territory, 
 -- plus the start date and end date that tell you what period the data covers?
 SELECT SUM(Sale_Amount) AS Total_Revenue, 
@@ -17,10 +17,10 @@ where Store_ID between 901 and 911;
 -- ===========================================================================
 
 -- Q2. What is the month by month revenue breakdown for the sales territory?
-SELECT YEAR(Transaction_Date), MONTH(Transaction_Date), SUM(Sale_Amount) 
+SELECT YEAR(Transaction_Date), MONTHNAME(Transaction_Date), SUM(Sale_Amount) 
 FROM Store_Sales
 WHERE Store_ID between 901 and 911
-GROUP BY YEAR(Transaction_Date), MONTH(Transaction_Date);
+GROUP BY YEAR(Transaction_Date), MONTHNAME(Transaction_Date);
 -- ==================================================================
 
 -- Q3. Provide a comparison of total revenue for your Texas territory vs the region it belongs to.
@@ -36,7 +36,7 @@ WHERE Store_Locations.State IN ('Texas', 'South Carolina', 'Florida');
 
 -- Q4. What is the number of transactions per month and average transaction size by product category for Texas?
 SELECT Inventory_Categories.Category,
-	MONTH(Transaction_Date) AS Month,
+	MONTHNAME(Transaction_Date) AS Month,
 	COUNT(id) AS Num_Transactions,
 	AVG(Sale_Amount) AS Avg_Transaction_Size
 FROM Store_Sales
