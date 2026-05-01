@@ -16,4 +16,4 @@ to analyze sales data from 2022 to 2025.
 - `nwaobia_sales_analysis.sql` - SQL queries and analysis
 - `nwaobi_territory_chart.xlsx` - Excel PivotChart
 - `nwaobi_capstone_presentation.pptx` - Presentation slides
-- 
+- Presentation Video Link: https://drive.google.com/file/d/1VEZQhuymfNH1LcFVV9eRHSPt7ldqnJN2/view?usp=sharing
